@@ -55,6 +55,13 @@
           li = $('<li></li>').text(title).attr('data-time', time);
           ul.append(li);
         });
+
+        $('li').on('click', function(){
+
+          time = parseFloat($(this).data('time'));
+          vc.setCurrentTime(video, time);
+          console.log(time);
+        });
       });
     </script>
   </body>
