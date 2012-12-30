@@ -42,6 +42,13 @@
       **/
       regexp = /\[(\d\.\d+)\] (.+)/;
       ul = $('ul')
+      video = Video.init();
+      vc = VideoController.init();
+
+      $('a').on('click', function(e){
+        e.preventDefault();
+        vc[this.id](video, $('#video-url').val());
+      });
 
       $('#loadMap').on('click', function(){
 
