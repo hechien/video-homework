@@ -5,6 +5,8 @@
 
   </head>
   <body>
+    <input type="text" id="video-url" value="http://media.w3.org/2010/05/sintel/trailer.mp4" />
+    <a href="#" id="loadVideo">載入影片</a>
     <video id="video1" width="480">
       <source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
       <source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg" />
@@ -34,7 +36,7 @@
 
       $('a').on('click', function(e){
         e.preventDefault();
-        controller[this.id](video);
+        controller[this.id](video, $('#video-url').val());
       });
 
       $('input[type="button"]').on('click', function(e){
