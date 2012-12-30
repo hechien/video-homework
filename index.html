@@ -18,6 +18,11 @@
       <a href="#" id="nextSecond">Next second</a>
     </div>
     <p>Current Time: <span id="current-time">0</span></p>
+    <div id="track-area">
+      <label for="track-title">標題：</label><input type="text" name="track-title" id="track-title" />
+      <input type="button" value="送出" />
+      <ul></ul>
+    </div>
     <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
     <script src="./javascripts/video.js"></script>
     <script src="./javascripts/track.js"></script>
@@ -30,6 +35,12 @@
       $('a').on('click', function(e){
         e.preventDefault();
         controller[this.id](video);
+      });
+
+      $('input[type="button"]').on('click', function(e){
+        track.add({ title: $('#track-title').val(), time: video.currentTime });
+        $('ul').append($('<li></li>').text("["+video.currentTime+"] "+$('#track-title').val()))
+        $('#track-title').val('');
       });
     </script>
   </body>
