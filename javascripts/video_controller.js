@@ -15,6 +15,10 @@ var VideoController = {
     return video.currentTime;
   },
 
+  setCurrentTime: function(video, sec){
+    video.currentTime = sec;
+  },
+
   prevSecond: function(video){
 
     --video.currentTime;
