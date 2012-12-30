@@ -27,5 +27,9 @@ var VideoController = {
     return true;
   },
 
+  loadVideo: function(video, url){
+    video.src = url;
+  },
+
   init: function(){ return this; }
 }
